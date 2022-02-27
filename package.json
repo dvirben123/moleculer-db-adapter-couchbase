@@ -1,0 +1,66 @@
+{
+  "name": "moleculer-db-adpater-couchbase",
+  "author": "Dvir Ben Ishay",
+  "version": "1.0.3",
+  "description": "Couchbase adpater for Moleculer DB service",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --ignore node_modules/ --watch examples/ --watch src/ -e js,ts,json --exec 'node -r ts-node/register --inspect=0.0.0.0:9889 examples/index.ts'",
+    "node": "nodemon --exec 'node -r ts-node/register --inspect=0.0.0.0:9889 examples/node/index.ts'",
+    "ci": "jest --watch",
+    "tsc": "tsc",
+    "test": "jest --coverage",
+    "test-debug1": "nodemon -e js,ts,json --watch /src /test --exec 'node --inspect=0.0.0.0:9225 ./node_modules/jest/bin/jest.js --runInBand --coverage'",
+    "test-debug": "node --inspect=0.0.0.0:9225 ./node_modules/jest/bin/jest.js --runInBand --coverage",
+    "lint": "eslint --ext=.js src test",
+    "deps": "npm-check -u",
+    "readme": "node node_modules/moleculer-docgen/index.js -t README.md src/index.js",
+    "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "keywords": [
+    "microservice",
+    "moleculer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:moleculerjs/moleculer-addons.git"
+  },
+  "homepage": "https://github.com/moleculerjs/moleculer-addons/tree/master/packages/moleculer-db-adpater-couchbase#readme",
+  "license": "MIT",
+  "peerDependencies": {
+    "moleculer": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.36",
+    "@types/couchbase": "^2.4.4",
+    "benchmarkify": "2.1.0",
+    "coveralls": "3.0.0",
+    "eslint": "4.18.2",
+    "jest": "22.4.2",
+    "jest-cli": "22.4.2",
+    "lolex": "2.3.2",
+    "moleculer": "0.14.13",
+    "moleculer-db": "^0.8.11",
+    "moleculer-docgen": "0.2.1",
+    "nodemon": "1.17.1",
+    "npm-check": "5.5.2",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.5.5"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/services/"
+    ]
+  },
+  "engines": {
+    "node": ">= 6.x.x"
+  },
+  "dependencies": {
+    "couchbase": "^3.2.4",
+    "dotenv": "^16.0.0",
+    "lodash": "^4.17.4",
+    "ottoman": "^2.1.0"
+  }
+}
